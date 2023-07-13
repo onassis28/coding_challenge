@@ -1,31 +1,32 @@
-import { StyledEngineProvider, Theme, ThemeProvider } from "@mui/material";
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import "./index.module.scss";
-import reportWebVitals from "./reportWebVitals";
-import theme from "./theme";
-import { worker } from "./mocks/browser";
+import { StyledEngineProvider, Theme, ThemeProvider } from '@mui/material';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.module.scss';
+import reportWebVitals from './reportWebVitals';
+import theme from './theme';
+import { worker } from './mocks/browser';
+import './index.css';
 
-if (process.env.REACT_APP_MSW === "active") {
-  console.log("starting worker");
-  worker.start();
+if (process.env.REACT_APP_MSW === 'active') {
+	console.log('starting worker');
+	worker.start();
 }
 
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
+declare module '@mui/styles/defaultTheme' {
+	// eslint-disable-next-line @typescript-eslint/no-empty-interface
+	interface DefaultTheme extends Theme {}
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <ThemeProvider theme={theme}>
-        <App />
-      </ThemeProvider>
-    </StyledEngineProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+	<React.StrictMode>
+		<StyledEngineProvider injectFirst>
+			<ThemeProvider theme={theme}>
+				<App />
+			</ThemeProvider>
+		</StyledEngineProvider>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

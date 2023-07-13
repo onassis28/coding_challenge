@@ -1,0 +1,18 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center;
+	align-items: center; */
+	margin-bottom: 10px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	padding: 20px;
+}
+
+.sub-container {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+	font-size: 13px;
+	font-weight: 500;
+	gap: 10px;
+}
